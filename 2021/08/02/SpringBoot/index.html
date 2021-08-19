@@ -15,11 +15,30 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Java">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://pic.imgdb.cn/item/611dd2374907e2d39c06c4f1.png">
+<meta property="og:image" content="https://pic.imgdb.cn/item/611dd26a4907e2d39c073a78.png">
+<meta property="og:image" content="https://pic.imgdb.cn/item/611dd26a4907e2d39c073a80.png">
+<meta property="og:image" content="https://pic.imgdb.cn/item/611dd26a4907e2d39c073a91.png">
+<meta property="og:image" content="https://pic.imgdb.cn/item/611dd26a4907e2d39c073a9b.png">
+<meta property="og:image" content="https://pic.imgdb.cn/item/611dd2d04907e2d39c0839fa.png">
+<meta property="og:image" content="https://pic.imgdb.cn/item/611dd4c04907e2d39c0cd394.png">
+<meta property="og:image" content="https://pic.imgdb.cn/item/611dd51f4907e2d39c0da5e6.png">
+<meta property="og:image" content="https://pic.imgdb.cn/item/611dd51f4907e2d39c0da5f2.png">
+<meta property="og:image" content="https://pic.imgdb.cn/item/611df66d4907e2d39c616db6.png">
+<meta property="og:image" content="https://pic.imgdb.cn/item/611df66d4907e2d39c616dbf.png">
+<meta property="og:image" content="https://pic.imgdb.cn/item/611df66d4907e2d39c616dcf.png">
+<meta property="og:image" content="https://pic.imgdb.cn/item/611df6be4907e2d39c627848.png">
+<meta property="og:image" content="https://pic.imgdb.cn/item/611df6be4907e2d39c627851.png">
+<meta property="og:image" content="https://pic.imgdb.cn/item/611df6be4907e2d39c62785c.png">
+<meta property="og:image" content="https://pic.imgdb.cn/item/611df76c4907e2d39c6492a6.png">
+<meta property="og:image" content="https://pic.imgdb.cn/item/611df7cf4907e2d39c65c1e8.png">
+<meta property="og:image" content="https://pic.imgdb.cn/item/611df7cf4907e2d39c65c1f2.png">
 <meta property="article:published_time" content="2021-08-02T12:37:54.000Z">
-<meta property="article:modified_time" content="2021-08-13T01:31:42.542Z">
+<meta property="article:modified_time" content="2021-08-19T06:19:34.457Z">
 <meta property="article:author" content="一只栗子球">
 <meta property="article:tag" content="Java 框架">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic.imgdb.cn/item/611dd2374907e2d39c06c4f1.png">
   
   
     <link rel="icon" href="/img/favicon.ico">
@@ -221,7 +240,7 @@
 </ol>
 </li>
 </ol>
-<h2 id="SpringBoot的约定"><a href="#SpringBoot的约定" class="headerlink" title="SpringBoot的约定"></a>SpringBoot的约定</h2><p>![image-20200321091519423](D:\JavaProjects\springboot-2021-版本资料\笔记\Spring Boot 2.5.0.assets\image-20200321091519423.png)</p>
+<h2 id="SpringBoot的约定"><a href="#SpringBoot的约定" class="headerlink" title="SpringBoot的约定"></a>SpringBoot的约定</h2><p><img src="https://pic.imgdb.cn/item/611dd2374907e2d39c06c4f1.png"></p>
 <ul>
 <li><p><code>springboot 项目中必须在src/main/resources中放入application.yml(.properties)核心配置文件  名字必须为:application</code></p>
 </li>
@@ -261,14 +280,14 @@
 </ul>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 主配置文件:</span></span><br><span class="line"><span class="bullet">-</span> application.yml	#用来书写相同的的配置</span><br><span class="line"><span class="code">				server:</span></span><br><span class="line"><span class="code">					port: 8080 #生产和测试端口一致</span></span><br><span class="line"><span class="code">                   </span></span><br><span class="line"><span class="code"># 生产配置文件:</span></span><br><span class="line"><span class="code">- application-pord.yml #prod为配置文件简名</span></span><br><span class="line"><span class="code">    			server:</span></span><br><span class="line"><span class="code">    				context-path: /cmfz</span></span><br><span class="line"><span class="code">    </span></span><br><span class="line"><span class="code">#测试配置文件:</span></span><br><span class="line"><span class="code">-	application-dev.yml  #dev为配置文件简名</span></span><br><span class="line"><span class="code">    			server:</span></span><br><span class="line"><span class="code">    				context-path: /springboot</span></span><br><span class="line"><span class="code"></span></span><br><span class="line"><span class="section">#在主配置中指定那个环境生效配置</span></span><br><span class="line">spring:</span><br><span class="line">  profiles:</span><br><span class="line"><span class="code">    active: dev #指定那个环境配置生效 dev为环境配置文件的简名</span></span><br></pre></td></tr></table></figure>
 
-<p>![image-20210609152026228](D:\JavaProjects\springboot-2021-版本资料\笔记\Spring Boot 2.5.0.assets\image-20210609152026228.png)</p>
+<p><img src="https://pic.imgdb.cn/item/611dd26a4907e2d39c073a78.png"></p>
 <h5 id="启动指定配置文件"><a href="#启动指定配置文件" class="headerlink" title="启动指定配置文件"></a>启动指定配置文件</h5><p>说明: 往往在企业级开发过程中为SpringBoot应用启动时指定一个完整外部配置也是经常用到的,在SpringBoot中也提供这个方式来启动项目如:</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 1.创建一个完整的配置文件</span></span><br></pre></td></tr></table></figure>
 
-<p>![image-20210609152117401](D:\JavaProjects\springboot-2021-版本资料\笔记\Spring Boot 2.5.0.assets\image-20210609152117401.png)</p>
+<p><img src="https://pic.imgdb.cn/item/611dd26a4907e2d39c073a80.png"></p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 2.启动时指定配置文件位置</span></span><br></pre></td></tr></table></figure>
 
-<p>![image-20210609152324204](D:\JavaProjects\springboot-2021-版本资料\笔记\Spring Boot 2.5.0.assets\image-20210609152324204.png)</p>
+<p><img src="https://pic.imgdb.cn/item/611dd26a4907e2d39c073a91.png"></p>
 <hr>
 <h2 id="工厂创建对象"><a href="#工厂创建对象" class="headerlink" title="工厂创建对象"></a>工厂创建对象</h2><h3 id="创建单个对象"><a href="#创建单个对象" class="headerlink" title="创建单个对象"></a>创建单个对象</h3><p>​    在springboot中可以管理单个对象可以直接使用spring框架中注解形式创建。</p>
 <ul>
@@ -340,8 +359,8 @@
 
 <h5 id="配置视图解析器"><a href="#配置视图解析器" class="headerlink" title="配置视图解析器"></a>配置视图解析器</h5><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">#在配置文件中引入视图解析器</span></span><br><span class="line">spring:</span><br><span class="line">  mvc:</span><br><span class="line"><span class="code">    view:</span></span><br><span class="line"><span class="code">      prefix: /     # /代表访问项目中webapp中页面</span></span><br><span class="line"><span class="code">      suffix: .jsp </span></span><br></pre></td></tr></table></figure>
 
-<h5 id="第一种方式使用插件启动访问JSP页面"><a href="#第一种方式使用插件启动访问JSP页面" class="headerlink" title="第一种方式使用插件启动访问JSP页面"></a>第一种方式使用插件启动访问JSP页面</h5><p>![image-20191129124602959](D:\JavaProjects\springboot-2021-版本资料\笔记\Spring Boot 2.5.0.assets\image-20191129124602959.png)</p>
-<h5 id="第二种方式使用idea中指定工作目录启动-访问JSP"><a href="#第二种方式使用idea中指定工作目录启动-访问JSP" class="headerlink" title="第二种方式使用idea中指定工作目录启动 访问JSP"></a>第二种方式使用idea中指定工作目录启动 访问JSP</h5><p> ![image-20191129124727562](D:\JavaProjects\springboot-2021-版本资料\笔记\Spring Boot 2.5.0.assets\image-20191129124727562.png)</p>
+<h5 id="第一种方式使用插件启动访问JSP页面"><a href="#第一种方式使用插件启动访问JSP页面" class="headerlink" title="第一种方式使用插件启动访问JSP页面"></a>第一种方式使用插件启动访问JSP页面</h5><p><img src="https://pic.imgdb.cn/item/611dd26a4907e2d39c073a9b.png"></p>
+<h5 id="第二种方式使用idea中指定工作目录启动-访问JSP"><a href="#第二种方式使用idea中指定工作目录启动-访问JSP" class="headerlink" title="第二种方式使用idea中指定工作目录启动 访问JSP"></a>第二种方式使用idea中指定工作目录启动 访问JSP</h5><p><img src="https://pic.imgdb.cn/item/611dd2d04907e2d39c0839fa.png"></p>
 <h5 id="启动项目测试"><a href="#启动项目测试" class="headerlink" title="启动项目测试"></a>启动项目测试</h5><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:8989/index.jsp</span><br></pre></td></tr></table></figure>
 
 <h5 id="修改jsp无须重启应用"><a href="#修改jsp无须重启应用" class="headerlink" title="修改jsp无须重启应用"></a>修改jsp无须重启应用</h5><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">server:</span><br><span class="line">  servlet:</span><br><span class="line"><span class="code">    jsp:</span></span><br><span class="line"><span class="code">      init-parameters:</span></span><br><span class="line"><span class="code">        development: true</span></span><br></pre></td></tr></table></figure>
@@ -398,7 +417,7 @@
 <h2 id="日志处理"><a href="#日志处理" class="headerlink" title="日志处理"></a>日志处理</h2><h5 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h5><p>​    springboot框架 集成日志  logback 日志  </p>
 <p>​    Logback是由<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/log4j/480673">log4j</a>创始人设计的又一个开源日志组件。目前，logback分为三个模块：logback-core，logback-classic和logback-access。是对log4j日志展示进一步改进!</p>
 <p>​    总结: logback 也是一个开源日志组件  和  log4j作用一致 都是用来生成日志 logback更加轻量</p>
-<h5 id="日志的级别"><a href="#日志的级别" class="headerlink" title="日志的级别"></a>日志的级别</h5><p>![image-20210610110653288](D:\JavaProjects\springboot-2021-版本资料\笔记\Spring Boot 2.5.0.assets\image-20210610110653288.png)</p>
+<h5 id="日志的级别"><a href="#日志的级别" class="headerlink" title="日志的级别"></a>日志的级别</h5><p><img src="https://pic.imgdb.cn/item/611dd4c04907e2d39c0cd394.png"></p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="quote">&gt; All &lt; Trace &lt; `DEBUG &lt; INFO &lt; WARN &lt; ERROR` &lt; Fatal &lt; OFF</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> OFF   | 关闭：最高级别，不打印日志。 </span><br><span class="line"><span class="bullet">-</span> FATAL | 致命：指明非常严重的可能会导致应用终止执行错误事件。</span><br><span class="line"><span class="bullet">-</span> ERROR | 错误：指明错误事件，但应用可能还能继续运行。 </span><br><span class="line"><span class="bullet">-</span> WARN | 警告：指明可能潜在的危险状况。 </span><br><span class="line"><span class="bullet">-</span> INFO | 信息：指明描述信息，从粗粒度上描述了应用运行过程。 </span><br><span class="line"><span class="bullet">-</span> DEBUG | 调试：指明细致的事件信息，对调试应用最有用。</span><br><span class="line"><span class="bullet">-</span> TRACE | 跟踪：指明程序运行轨迹，比DEBUG级别的粒度更细。 </span><br><span class="line"><span class="bullet">-</span> ALL | 所有：所有日志级别，包括定制级别。</span><br><span class="line"></span><br><span class="line"><span class="quote">&gt; 日志级别由低到高:  `日志级别越高输出的日志信息越多`</span></span><br></pre></td></tr></table></figure>
 
 <h5 id="项目中日志分类"><a href="#项目中日志分类" class="headerlink" title="项目中日志分类"></a>项目中日志分类</h5><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 日志分类:</span></span><br><span class="line"><span class="bullet">-</span> 一种是rootLogger(根全局日志) :     用来监听项目中所有的运行日志 包括引入依赖jar中的日志 </span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> 一种是logger(指定包级别日志) :         用来监听项目中指定包中的日志信息</span><br></pre></td></tr></table></figure>
@@ -446,9 +465,10 @@
 
 <p><strong><code>注意:order用来执行多个拦截器的执行顺序,order书写是自然数,按照自然数顺序执行</code></strong></p>
 <hr>
-<h2 id="war包部署"><a href="#war包部署" class="headerlink" title="war包部署"></a>war包部署</h2><h5 id="设置打包方式为war"><a href="#设置打包方式为war" class="headerlink" title="设置打包方式为war"></a>设置打包方式为war</h5><blockquote>
-<p>​    <strong><packaging>war</packaging></strong></p>
-</blockquote>
+<h2 id="war包部署"><a href="#war包部署" class="headerlink" title="war包部署"></a>war包部署</h2><h5 id="设置打包方式为war"><a href="#设置打包方式为war" class="headerlink" title="设置打包方式为war"></a>设置打包方式为war</h5><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">packaging</span>&gt;</span></span>war<span class="xml"><span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+
+
 <h5 id="在插件中指定入口类"><a href="#在插件中指定入口类" class="headerlink" title="在插件中指定入口类"></a>在插件中指定入口类</h5><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span></span><br><span class="line"><span class="code">	&lt;plugins&gt;</span></span><br><span class="line"><span class="code">      &lt;plugin&gt;</span></span><br><span class="line"><span class="code">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span></span><br><span class="line"><span class="code">        &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;</span></span><br><span class="line"><span class="code">        &lt;!--使用热部署出现中文乱码解决方案--&gt;</span></span><br><span class="line"><span class="code">        &lt;configuration&gt;</span></span><br><span class="line"><span class="code">          &lt;fork&gt;true&lt;/fork&gt;</span></span><br><span class="line"><span class="code">          &lt;!--增加jvm参数--&gt;</span></span><br><span class="line"><span class="code">          &lt;jvmArguments&gt;-Dfile.encoding=UTF-8&lt;/jvmArguments&gt;</span></span><br><span class="line"><span class="code">          &lt;!--指定入口类--&gt;</span></span><br><span class="line"><span class="code">          &lt;mainClass&gt;com.baizhi.Application&lt;/mainClass&gt;</span></span><br><span class="line"><span class="code">        &lt;/configuration&gt;</span></span><br><span class="line"><span class="code">      &lt;/plugin&gt;</span></span><br><span class="line"><span class="code">    &lt;/plugins&gt;</span></span><br><span class="line"><span class="code">&lt;/build&gt;	  </span></span><br></pre></td></tr></table></figure>
 
 <h5 id="排除内嵌的tomcat"><a href="#排除内嵌的tomcat" class="headerlink" title="排除内嵌的tomcat"></a>排除内嵌的tomcat</h5><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></span><br><span class="line">  <span class="xml"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span></span>org.springframework.boot<span class="xml"><span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></span><br><span class="line">  <span class="xml"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span></span>spring-boot-starter-tomcat<span class="xml"><span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></span><br><span class="line">  <span class="xml"><span class="tag">&lt;<span class="name">scope</span>&gt;</span></span>provided<span class="xml"><span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span>   &lt;!--去掉内嵌tomcat--&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></span><br><span class="line">  <span class="xml"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span></span>org.apache.tomcat.embed<span class="xml"><span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></span><br><span class="line">  <span class="xml"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span></span>tomcat-embed-jasper<span class="xml"><span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></span><br><span class="line">  <span class="xml"><span class="tag">&lt;<span class="name">scope</span>&gt;</span></span>provided<span class="xml"><span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span>  &lt;!--去掉使用内嵌tomcat解析jsp--&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
@@ -457,12 +477,11 @@
 
 <h5 id="打包测试"><a href="#打包测试" class="headerlink" title="打包测试"></a>打包测试</h5><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 一旦使用war包部署注意:</span></span><br><span class="line"><span class="bullet">-</span>	1. application.yml 中配置port context-path 失效</span><br><span class="line"><span class="bullet">-</span>	2. 访问时使用打成war包的名字和外部tomcat端口号进行访问项目</span><br></pre></td></tr></table></figure>
 
-<h2 id="Jar包部署"><a href="#Jar包部署" class="headerlink" title="Jar包部署"></a>Jar包部署</h2><h5 id="设置打包方式为jar"><a href="#设置打包方式为jar" class="headerlink" title="设置打包方式为jar"></a>设置打包方式为jar</h5><blockquote>
-<p>​    <strong><packaging>jar</packaging></strong></p>
-</blockquote>
+<h2 id="Jar包部署"><a href="#Jar包部署" class="headerlink" title="Jar包部署"></a>Jar包部署</h2><h5 id="设置打包方式为jar"><a href="#设置打包方式为jar" class="headerlink" title="设置打包方式为jar"></a>设置打包方式为jar</h5><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">packaging</span>&gt;</span></span>jar<span class="xml"><span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
 <p><strong><code>注意:默认方式也是jar</code></strong></p>
-<h5 id="执行打包"><a href="#执行打包" class="headerlink" title="执行打包"></a>执行打包</h5><p>![image-20210616113809792](D:\JavaProjects\springboot-2021-版本资料\笔记\Spring Boot 2.5.0.assets\image-20210616113809792.png)</p>
-<h5 id="测试访问"><a href="#测试访问" class="headerlink" title="测试访问"></a>测试访问</h5><p>![image-20210616113831756](D:\JavaProjects\springboot-2021-版本资料\笔记\Spring Boot 2.5.0.assets\image-20210616113831756.png)</p>
+<h5 id="执行打包"><a href="#执行打包" class="headerlink" title="执行打包"></a>执行打包</h5><p><img src="https://pic.imgdb.cn/item/611dd51f4907e2d39c0da5e6.png"></p>
+<h5 id="测试访问"><a href="#测试访问" class="headerlink" title="测试访问"></a>测试访问</h5><p><img src="https://pic.imgdb.cn/item/611dd51f4907e2d39c0da5f2.png"></p>
 <ul>
 <li><strong><code>注意:springboot部署jsp时,插件版本必须指定为1.4.2版本,并进行jsp打包配置才可以,其他版本均不支持!!!</code></strong></li>
 </ul>
@@ -488,10 +507,10 @@
 
 <h6 id="编写控制器测试"><a href="#编写控制器测试" class="headerlink" title="编写控制器测试"></a>编写控制器测试</h6><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@Controller    //一定要是@Controller 不能再使用@RestController注解</span><br><span class="line">@RequestMapping(&quot;hello&quot;)</span><br><span class="line">public class HelloController &#123;</span><br><span class="line"><span class="code">    @GetMapping(&quot;hello&quot;)</span></span><br><span class="line"><span class="code">    public String hello()&#123;</span></span><br><span class="line"><span class="code">        System.out.println(&quot;测试与 thymeleaf 的集成&quot;);</span></span><br><span class="line"><span class="code">        return &quot;index&quot;;</span></span><br><span class="line"><span class="code">    &#125;</span></span><br><span class="line"><span class="code">&#125;</span></span><br></pre></td></tr></table></figure>
 
-<h6 id="在templates目录中定义模板"><a href="#在templates目录中定义模板" class="headerlink" title="在templates目录中定义模板"></a>在templates目录中定义模板</h6><p>![image-20200323085834206](D:\JavaProjects\springboot-2021-版本资料\笔记\Spring Boot 2.5.0.assets\image-20200323085834206-3815430.png)</p>
+<h6 id="在templates目录中定义模板"><a href="#在templates目录中定义模板" class="headerlink" title="在templates目录中定义模板"></a>在templates目录中定义模板</h6><p><img src="https://pic.imgdb.cn/item/611df66d4907e2d39c616db6.png"></p>
 <h6 id="测试访问-1"><a href="#测试访问-1" class="headerlink" title="测试访问"></a>测试访问</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:8989/springboot_day3/hello/hello</span><br></pre></td></tr></table></figure>
 
-<h6 id="查看结果"><a href="#查看结果" class="headerlink" title="查看结果"></a>查看结果</h6><p>![image-20200323085948499](D:\JavaProjects\springboot-2021-版本资料\笔记\Spring Boot 2.5.0.assets\image-20200323085948499-3815430.png)</p>
+<h6 id="查看结果"><a href="#查看结果" class="headerlink" title="查看结果"></a>查看结果</h6><p><img src="https://pic.imgdb.cn/item/611df66d4907e2d39c616dbf.png"></p>
 <hr>
 <h5 id="模板基本语法"><a href="#模板基本语法" class="headerlink" title="模板基本语法"></a>模板基本语法</h5><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">使用时必须在页面中加入thymeleaf如下命名空间:</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span> <span class="attr">xmlns:th</span>=<span class="string">&quot;http://www.thymeleaf.org&quot;</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 
@@ -499,7 +518,7 @@
 
 <h6 id="获取数据"><a href="#获取数据" class="headerlink" title="获取数据"></a>获取数据</h6><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;name&#125;&quot;</span>/&gt;</span></span>  ---&gt;获取数据</span><br></pre></td></tr></table></figure>
 
-<p>![image-20200323100747881](D:\JavaProjects\springboot-2021-版本资料\笔记\Spring Boot 2.5.0.assets\image-20200323100747881-3835265.png)</p>
+<p><img src="https://pic.imgdb.cn/item/611df66d4907e2d39c616dcf.png"></p>
 <h6 id="解析含有html标签数据"><a href="#解析含有html标签数据" class="headerlink" title="解析含有html标签数据"></a>解析含有html标签数据</h6><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">model.addAttribute(&quot;name&quot;,&quot;<span class="xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&#x27;&#x27;</span>&gt;</span></span>张三<span class="xml"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span>&quot;);</span><br><span class="line">model.addAttribute(&quot;username&quot;,&quot;小陈&quot;);</span><br></pre></td></tr></table></figure>
 
 <ul>
@@ -507,18 +526,18 @@
 </ul>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;name&#125;&quot;</span>/&gt;</span></span></span><br></pre></td></tr></table></figure>
 
-<p>![image-20200323100956740](D:\JavaProjects\springboot-2021-版本资料\笔记\Spring Boot 2.5.0.assets\image-20200323100956740-3835265.png)</p>
+<p><img src="https://pic.imgdb.cn/item/611df6be4907e2d39c627848.png"></p>
 <ul>
 <li>获取并解析</li>
 </ul>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">th:utext</span>=<span class="string">&quot;$&#123;name&#125;&quot;</span>/&gt;</span></span></span><br></pre></td></tr></table></figure>
 
-<p>![image-20200323101457134](D:\JavaProjects\springboot-2021-版本资料\笔记\Spring Boot 2.5.0.assets\image-20200323101457134-3835265.png)</p>
+<p><img src="https://pic.imgdb.cn/item/611df6be4907e2d39c627851.png"></p>
 <ul>
 <li><p>将数据赋值给表单元素</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">th:value</span>=<span class="string">&quot;$&#123;username&#125;&quot;</span>/&gt;</span></span></span><br></pre></td></tr></table></figure>
 
-<p>![image-20200323103452620](D:\JavaProjects\springboot-2021-版本资料\笔记\Spring Boot 2.5.0.assets\image-20200323103452620-3835265.png)</p>
+<p><img src="https://pic.imgdb.cn/item/611df6be4907e2d39c62785c.png"></p>
 </li>
 </ul>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 总结</span></span><br><span class="line"><span class="bullet">-</span>  1.使用 th:text=&quot;$&#123;属性名&#125;&quot;  获取对应数据,获取数据时会将对应标签中数据清空,因此最好是空标签</span><br><span class="line"><span class="bullet">-</span>  2.使用 th:utext=&quot;$&#123;属性名&#125;&quot; 获取对应的数据,可以将数据中html先解析在渲染到页面</span><br><span class="line"><span class="bullet">-</span>  3.使用 th:value=&quot;$&#123;属性名&#125;&quot; 获取数据直接作为表单元素value属性</span><br></pre></td></tr></table></figure>
@@ -541,7 +560,7 @@
 
 <ul>
 <li><p>项目中放入对应静态资源</p>
-<p>![image-20200323142307411](D:\JavaProjects\springboot-2021-版本资料\笔记\Spring Boot 2.5.0.assets\image-20200323142307411-3835265.png)</p>
+<p><img src="https://pic.imgdb.cn/item/611df76c4907e2d39c6492a6.png"></p>
 </li>
 <li><p>页面中引入</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">th:href</span>=<span class="string">&quot;@&#123;/css/index.css&#125;&quot;</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">th:src</span>=<span class="string">&quot;@&#123;/js/jquery-min.js&#125;&quot;</span>&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
@@ -643,7 +662,7 @@
 <li>在浏览器中发起一个AJAX请求,会受到同源策略限制。</li>
 <li><strong><code>出现错误:Access-Control-Allow-Origin</code></strong></li>
 </ul>
-<p>![image-20210623102949273](D:\JavaProjects\springboot-2021-版本资料\笔记\Spring Boot 2.5.0.assets\image-20210623102949273.png)</p>
+<p><img src="https://pic.imgdb.cn/item/611df7cf4907e2d39c65c1e8.png"></p>
 <h5 id="使用CORS解决同源限制"><a href="#使用CORS解决同源限制" class="headerlink" title="使用CORS解决同源限制"></a>使用CORS解决同源限制</h5><ol>
 <li><h6 id="CrossOrigin注解"><a href="#CrossOrigin注解" class="headerlink" title="@CrossOrigin注解"></a>@CrossOrigin注解</h6><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@RestController</span><br><span class="line">@RequestMapping(&quot;demos&quot;)</span><br><span class="line">@CrossOrigin</span><br><span class="line">public class DemoController &#123;</span><br><span class="line"><span class="code">    @GetMapping</span></span><br><span class="line"><span class="code">    public String demos() &#123;</span></span><br><span class="line"><span class="code">        System.out.println(&quot;========demo=======&quot;);</span></span><br><span class="line"><span class="code">        return &quot;demo ok&quot;;</span></span><br><span class="line"><span class="code">    &#125;</span></span><br><span class="line"><span class="code">&#125;</span></span><br></pre></td></tr></table></figure></li>
 <li><h6 id="全局解决跨域问题"><a href="#全局解决跨域问题" class="headerlink" title="全局解决跨域问题"></a>全局解决跨域问题</h6><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">@Configuration</span><br><span class="line">public class CorsConfig &#123;</span><br><span class="line"><span class="code">    @Bean</span></span><br><span class="line"><span class="code">    public CorsFilter corsFilter() &#123;</span></span><br><span class="line"><span class="code">        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();</span></span><br><span class="line"><span class="code">        CorsConfiguration corsConfiguration = new CorsConfiguration();</span></span><br><span class="line"><span class="code">        corsConfiguration.addAllowedOrigin(&quot;*&quot;); // 1允许任何域名使用</span></span><br><span class="line"><span class="code">        corsConfiguration.addAllowedHeader(&quot;*&quot;); // 2允许任何头</span></span><br><span class="line"><span class="code">        corsConfiguration.addAllowedMethod(&quot;*&quot;); // 3允许任何方法（post、get等）</span></span><br><span class="line"><span class="code">        source.registerCorsConfiguration(&quot;/**&quot;, corsConfiguration);//4处理所有请求的跨域配置</span></span><br><span class="line"><span class="code">     return new CorsFilter(source);</span></span><br><span class="line"><span class="code">    &#125;</span></span><br><span class="line"><span class="code">&#125;</span></span><br></pre></td></tr></table></figure>
@@ -668,7 +687,7 @@
 <li><p>通过程序传递密钥</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-Djasypt.encryptor.password=cf150b74e4824146ad76e9ebe757ba76</span><br></pre></td></tr></table></figure>
 
-<p>![image-20210629191623880](D:\JavaProjects\springboot-2021-版本资料\笔记\Spring Boot 2.5.0.assets\image-20210629191623880.png)</p>
+<p><img src="https://pic.imgdb.cn/item/611df7cf4907e2d39c65c1f2.png"></p>
 </li>
 <li><p>加密、解密</p>
 </li>
