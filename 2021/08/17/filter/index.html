@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Category: Linux基础 | Hexo</title>
+  <title>Filter&amp;Listener | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/categories/Linux%E5%9F%BA%E7%A1%80/index.html">
+  <meta name="description" content="过滤器和监听器简单入门">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Filter&amp;Listener">
+<meta property="og:url" content="http://example.com/2021/08/17/filter/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="过滤器和监听器简单入门">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-08-17T03:37:17.000Z">
+<meta property="article:modified_time" content="2021-08-17T03:39:41.420Z">
 <meta property="article:author" content="一只栗子球">
+<meta property="article:tag" content="Java 后端">
 <meta name="twitter:card" content="summary">
   
   
@@ -156,60 +161,208 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-filter" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/08/02/Linux/" class="archive-article-date">
-  	<time datetime="2021-08-02T11:33:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-02</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/08/02/Linux/">Linux</a>
+    <h1 class="article-title" itemprop="name">
+      Filter&amp;Listener
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+        
+        <a href="/2021/08/17/filter/" class="archive-article-date">
+  	<time datetime="2021-08-17T03:37:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="过滤器和监听器简单入门"><a href="#过滤器和监听器简单入门" class="headerlink" title="过滤器和监听器简单入门"></a>过滤器和监听器简单入门</h3><span id="more"></span>
+
+<h3 id="Filter-过滤器"><a href="#Filter-过滤器" class="headerlink" title="Filter:过滤器"></a>Filter:过滤器</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1.</span> 概念：</span><br><span class="line"><span class="bullet">	*</span> web中的过滤器：当访问服务器的资源时，过滤器可以将请求拦截下来，完成一些特殊的功能。</span><br><span class="line"><span class="bullet">	*</span> 过滤器的作用：</span><br><span class="line"><span class="bullet">		*</span> 一般用于完成通用的操作。如：登录验证、统一编码处理、敏感字符过滤...</span><br><span class="line"></span><br><span class="line"><span class="bullet">2.</span> 快速入门：</span><br><span class="line"><span class="bullet">	1.</span> 步骤：</span><br><span class="line"><span class="bullet">		1.</span> 定义一个类，实现接口Filter</span><br><span class="line"><span class="bullet">		2.</span> 复写方法</span><br><span class="line"><span class="bullet">		3.</span> 配置拦截路径</span><br><span class="line"><span class="bullet">			1.</span> web.xml</span><br><span class="line"><span class="bullet">			2.</span> 注解</span><br><span class="line"></span><br><span class="line"><span class="bullet">	2.</span> 代码：</span><br><span class="line"><span class="code">		@WebFilter(&quot;/*&quot;) //访问所有资源之前，都会执行该过滤器</span></span><br><span class="line"><span class="code">		public class FilterDemo1 implements Filter &#123;</span></span><br><span class="line"><span class="code"></span></span><br><span class="line"><span class="code">	    @Override</span></span><br><span class="line"><span class="code">	    public void init(FilterConfig filterConfig) throws ServletException &#123;</span></span><br><span class="line"><span class="code">	</span></span><br><span class="line"><span class="code">	    &#125;</span></span><br><span class="line"><span class="code">	</span></span><br><span class="line"><span class="code">	    @Override</span></span><br><span class="line"><span class="code">	    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException &#123;</span></span><br><span class="line"><span class="code">	        System.out.println(&quot;filterDemo1被执行了.....&quot;);</span></span><br><span class="line"><span class="code">	</span></span><br><span class="line"><span class="code">	        //放行</span></span><br><span class="line"><span class="code">	        filterChain.doFilter(servletRequest,servletResponse);</span></span><br><span class="line"><span class="code">	    &#125;</span></span><br><span class="line"><span class="code">	</span></span><br><span class="line"><span class="code">	    @Override</span></span><br><span class="line"><span class="code">	    public void destroy() &#123;</span></span><br><span class="line"><span class="code">	</span></span><br><span class="line"><span class="code">	    &#125;</span></span><br><span class="line"><span class="code">	&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">2.</span> 过滤器执行流程</span><br><span class="line"><span class="bullet">	1.</span> 执行过滤器</span><br><span class="line"><span class="bullet">	2.</span> 执行放行后的资源</span><br><span class="line"><span class="bullet">	3.</span> 回来执行过滤器放行代码</span><br><span class="line"></span><br><span class="line"><span class="bullet">3.</span> 过滤器生命周期方法</span><br><span class="line"><span class="bullet">	1.</span> init：在服务器启动后，会创建Filter对象，然后调用init方法。只执行一次。用于加载资源</span><br><span class="line"><span class="bullet">	2.</span> doFilter：每一次请求被拦截时，会执行。执行多次</span><br><span class="line"><span class="bullet">	3.</span> destroy：在服务器关闭后，Filter对象被销毁。如果服务器是正常关闭，则会执行destroy方法。用于释放资源</span><br><span class="line"></span><br><span class="line"><span class="bullet">4.</span> 过滤器配置详解</span><br><span class="line"><span class="bullet">	*</span> 拦截路径配置：</span><br><span class="line"><span class="bullet">		1.</span> 具体资源路径：/index.jsp  只有访问index.jsp资源时，过滤器才会被执行</span><br><span class="line"><span class="bullet">		2.</span> 拦截目录：/user/<span class="emphasis">*  访问/user下的所有资源时，过滤器都会被执行</span></span><br><span class="line"><span class="emphasis">		3. 后缀名拦截：*</span>.jsp  访问所有的后缀名为.jsp资源时，过滤器都会被执行</span><br><span class="line"><span class="bullet">		4.</span> 拦截所有资源：/<span class="emphasis">*  访问所有资源时，过滤器都会被执行</span></span><br><span class="line"><span class="emphasis">	*</span> 拦截方式配置：资源被访问的方式</span><br><span class="line"><span class="bullet">		*</span> 注解配置：</span><br><span class="line"><span class="bullet">			*</span> 设置dispatcherTypes属性</span><br><span class="line"><span class="bullet">				1.</span> REQUEST:默认值。浏览器直接请求资源</span><br><span class="line"><span class="bullet">				2.</span> FORWARD:转发访问资源</span><br><span class="line"><span class="bullet">				3.</span> INCLUDE:包含访问资源</span><br><span class="line"><span class="bullet">				4.</span> ERROR:错误跳转资源</span><br><span class="line"><span class="bullet">				5.</span> ASYNC:异步访问资源</span><br><span class="line"></span><br><span class="line"><span class="bullet">		*</span> web.xml配置</span><br><span class="line"><span class="bullet">			*</span> 设置<span class="xml"><span class="tag">&lt;<span class="name">dispatcher</span>&gt;</span></span><span class="xml"><span class="tag">&lt;<span class="name">dispatcher</span>&gt;</span></span>标签即可</span><br><span class="line"></span><br><span class="line"><span class="bullet">5.</span> 过滤器链(配置多个过滤器)</span><br><span class="line"><span class="bullet">	*</span> 执行顺序：如果有两个过滤器：过滤器1和过滤器2</span><br><span class="line"><span class="bullet">		1.</span> 过滤器1</span><br><span class="line"><span class="bullet">		2.</span> 过滤器2</span><br><span class="line"><span class="bullet">		3.</span> 资源执行</span><br><span class="line"><span class="bullet">		4.</span> 过滤器2</span><br><span class="line"><span class="bullet">		5.</span> 过滤器1</span><br><span class="line"></span><br><span class="line"><span class="bullet">	*</span> 过滤器先后顺序问题：</span><br><span class="line"><span class="bullet">		1.</span> 注解配置：按照类名的字符串比较规则比较，值小的先执行</span><br><span class="line"><span class="bullet">			*</span> 如：AFilter 和 BFilter，AFilter就先执行了。</span><br><span class="line"></span><br><span class="line"><span class="bullet">		2.</span> web.xml配置：<span class="xml"><span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></span>谁定义在上边，谁先执行</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">6.</span> 增强对象的功能：</span><br><span class="line"><span class="bullet">	*</span> 设计模式：一些通用的解决固定问题的方式</span><br><span class="line"><span class="bullet">	1.</span> 装饰模式</span><br><span class="line"><span class="bullet">	2.</span> 代理模式</span><br><span class="line"><span class="bullet">		*</span> 概念：</span><br><span class="line"><span class="bullet">			1.</span> 真实的对象：被代理的对象</span><br><span class="line"><span class="bullet">			2.</span> 代理对象</span><br><span class="line"><span class="bullet">			3.</span> 代理模式:	代理对象代理真实对象，达到增强真实对象功能的目的</span><br><span class="line"><span class="bullet">		*</span> 实现方式：</span><br><span class="line"><span class="bullet">			1.</span> 静态代理：有一个类文件描述代理模式</span><br><span class="line"><span class="bullet">			2.</span> 动态代理：在内存中形成代理类</span><br><span class="line"><span class="bullet">				*</span> 实现步骤：</span><br><span class="line"><span class="bullet">					1.</span> 代理对象和真实对象实现相同的接口</span><br><span class="line"><span class="bullet">					2.</span> 代理对象 = Proxy.newProxyInstance;</span><br><span class="line"><span class="bullet">					3.</span> 使用代理对象调用方法。</span><br><span class="line"><span class="bullet">					4.</span> 增强方法</span><br><span class="line"></span><br><span class="line"><span class="bullet">				*</span> 增强方式：</span><br><span class="line"><span class="bullet">					1.</span> 增强参数列表</span><br><span class="line"><span class="bullet">					2.</span> 增强返回值类型</span><br><span class="line"><span class="bullet">					3.</span> 增强方法体执行逻辑</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Listener-监听器"><a href="#Listener-监听器" class="headerlink" title="Listener:监听器"></a>Listener:监听器</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">*</span> 概念：web的三大组件之一。</span><br><span class="line"><span class="bullet">	*</span> 事件监听机制</span><br><span class="line"><span class="bullet">		*</span> 事件：一件事情</span><br><span class="line"><span class="bullet">		*</span> 事件源：事件发生的地方</span><br><span class="line"><span class="bullet">		*</span> 监听器：一个对象</span><br><span class="line"><span class="bullet">		*</span> 注册监听：将事件、事件源、监听器绑定在一起。当事件源上发生某个事件后，执行监听器代码</span><br><span class="line"></span><br><span class="line"><span class="bullet">*</span> ServletContextListener:监听ServletContext对象的创建和销毁</span><br><span class="line"><span class="bullet">	*</span> 方法：</span><br><span class="line"><span class="bullet">		*</span> void contextDestroyed(ServletContextEvent sce):ServletContext对象销毁之前会调用该方法</span><br><span class="line"><span class="bullet">		*</span> void contextInitialized(ServletContextEvent sce):ServletContext对象创建后会调用该方法</span><br><span class="line"><span class="bullet">		*</span> 步骤：</span><br><span class="line"><span class="bullet">			1.</span> 定义一个类，实现ServletContextListener接口</span><br><span class="line"><span class="bullet">			2.</span> 复写方法</span><br><span class="line"><span class="bullet">			3.</span> 配置</span><br><span class="line"><span class="bullet">				1.</span> web.xml</span><br><span class="line"><span class="bullet">				2.</span> 注解</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 后端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Linux基础//" class="article-tag-list-link color3">Linux基础</a>
+        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/08/17/filter/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2021/08/18/mybatis-plus/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          MyBatis-Plus
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2021/08/13/redis/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Redis</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -232,10 +385,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
 		root: "/",
